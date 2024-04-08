@@ -1,0 +1,31 @@
+.TvSeries {
+    padding: 0 3px;
+
+    box-sizing: border-box;
+    position: absolute;
+    width: auto !important;
+    height: 2.4rem !important;
+    left: 5rem; 
+    top: 0.8rem;
+
+    background: var(--orange-90);
+
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 2.4rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.TvSeries_TopRaited {
+    left: 6.5rem;
+}
+
+.TvSeries_NoRating {
+    left: 0;
+    inset-inline-start: 0.8rem;
+}
+
+li[data-tid="SimpleSnapCarousel"] {
+    position: relative;
+}

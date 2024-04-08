@@ -1,19 +1,25 @@
 {
     "manifest_version": 3,
-    "name": "Hello Extensions of the world!",
-    "description": "Base Level Extension",
+    "name": "Show TV series",
+    "description": "Позволяет показать лейбл сериала на hd.kinopoisk.ru",
     "version": "1.0",
+
     "action": {
-      "default_popup": "hello.html",
-      "default_icon": "hello_extensions.png"
+      "default_icon": "logo.png"
     },
-    "permissions": [
-        "webRequest"
-    ],
+
     "host_permissions": [
         "*://hd.kinopoisk.ru/*"
     ],
-    "background": {
-        "service_worker": "background.js"
-    }
+
+    "content_scripts": [{
+        "matches": ["*://hd.kinopoisk.ru/*"],
+        "run_at": "document_start",
+        "js": ["inject.js"],
+        "css" : ["injected.css"]
+    }],
+    "web_accessible_resources": [{
+        "resources": ["injected.js"],
+        "matches": ["*://hd.kinopoisk.ru/*"]
+    }]
 }
